@@ -30,6 +30,8 @@ program.on('--help', function () {
   //console.log();
   //console.log('  file names:')
   //console.log('    a list of files to run. files must end in .js and will exit after running unless --shell is specified');
+
+  console.log();
 })
 
 program.parse(process.argv);
