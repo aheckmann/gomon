@@ -38,8 +38,8 @@ gomon>
 
 ## API
 
-- `dbs()`: list available databases
-- `collections()`: list available collections in current database
+- `show.dbs`: list available databases
+- `show.collections`: list available collections in current database
 - `use()`: switch databases
 - `exit`: exits the shell
 
