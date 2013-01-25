@@ -11,7 +11,7 @@ _Work in Progress_
 ```
 $ gomon --help
 
-  Usage: gomon [options] [db address]
+  Usage: gomon [options] [db address] [file names]
 
   Options:
 
@@ -19,12 +19,18 @@ $ gomon --help
     -V, --version  output the version number
     --port <port>  port to connect to
     --host <host>  server to connect to
+    --shell        run the shell after executing files
 
   db address:
     foo                     foo database on local machine
     192.169.0.5/foo         foo database on 192.168.0.5 machine
     192.169.0.5:9999/foo    foo database on 192.168.0.5 machine on port 9999
     mongodb://host:port/db  mongo URI
+
+  file names:
+      List of space delimited files (ending in .js) to execute.
+      When passed, the shell exits after execution unless --shell
+      is specified.
 ```
 
 ## Example
@@ -40,8 +46,9 @@ gomon>
 
 - `show.dbs`: list available databases
 - `show.collections`: list available collections in current database
-- `use()`: switch databases
+- `use[databaseName]`: switch databases
 - `exit`: exits the shell
+- `show.tables`: alias of `show.collections`
 
 More to come.
 
@@ -73,7 +80,7 @@ gomon> use.dev
 
 For autocompletion, type `use.<TAB>` to see a list of available databases.
 
-Show the dev database collections
+Display the dev database collections
 
 ```js
 gomon> show.collections
@@ -86,12 +93,29 @@ Get a count of the users collection
 
 ```js
 gomon> db.users.count(console.log)
-gomon> null 392984
+gomon> null 1
+```
+
+Look up a user
+
+```js
+gomon> db.users.findOne(console.log)
+gomon> null { _id: 50f99acfc50ea8c8ef23142c, name: 'gomon was here' }
+```
+
+`p` is a global helper for queries that performs pretty printing on results.
+
+```js
+gomon> db.users.findOne(p)
+gomon>
+error:  null
+{ _id: 50f99acfc50ea8c8ef23142c,
+  name: 'gomon was here' }
 ```
 
 ### Debugging
 
-`gomon` uses [visionmedia/debug](https://github.com/visionmedia/debug) to aid with debugging. Enable it like so:
+Enable debugging output:
 
 ```
 DEBUG=gomon gomon localhost:27017
