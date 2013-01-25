@@ -13,7 +13,6 @@
   "keywords": ["shell","mongodb","console"],
   "dependencies": {
     "commander": "1.0.5",
-    "debug": "0.7.0",
     "mongodb": "1.2.9"
   },
   "devDependencies": {
