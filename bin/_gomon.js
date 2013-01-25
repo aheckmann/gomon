@@ -7,17 +7,15 @@ var program = new (require('commander')).Command('gomon')
 
 program
   .version(require('../package').version)
-  .usage('[options] [mongo URI] [file names]')
+  .usage('[options] [db address] [file names]')
   .option('--port <port>', 'port to connect to')
   .option('--host <host>', 'server to connect to')
+  .option('-e --eval <code>', 'evaluate script')
+  .option('-v --version', 'print gomon\'s version')
   .option('--shell', 'run the shell after executing files')
   //.option('--norc', 'will not run the ".mongorc.js" file on start up')
-  //.option('--quiet', 'be less chatty')
-  .option('-e --eval <code>', 'evaluate script')
-  //.option('-v --version', 'print gomon\'s version')
   //.option('-u --username <name>', 'username for authentication')
   //.option('-p --password <pwd>', 'password for authentication')
-  //.option('--verbose', 'increase verbosity')
 
 program.on('--help', function () {
   console.log('  db address:')
