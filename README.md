@@ -51,6 +51,7 @@ gomon>
 - `use[databaseName]`: switch databases
 - `exit`: exits the shell
 - `show.tables`: alias of `show.collections`
+- `db.collection.findOne(p)`: find a single document and print it
 
 More to come.
 
