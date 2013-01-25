@@ -7,11 +7,10 @@ var program = new (require('commander')).Command('gomon')
 
 program
   .version(require('../package').version)
-  .usage('[options] [mongo URI]')
+  .usage('[options] [mongo URI] [file names]')
   .option('--port <port>', 'port to connect to')
   .option('--host <host>', 'server to connect to')
   .option('--shell', 'run the shell after executing files')
-  //.usage('[options] [mongo URI] [file names (ending in .js)]')
   //.option('--norc', 'will not run the ".mongorc.js" file on start up')
   //.option('--quiet', 'be less chatty')
   //.option('--eval <code>', 'evaluate javascript')
@@ -27,9 +26,11 @@ program.on('--help', function () {
   console.log('    192.169.0.5:9999/foo    foo database on 192.168.0.5 machine on port 9999');
   console.log('    mongodb://host:port/db  mongo URI')
 
-  //console.log();
-  //console.log('  file names:')
-  //console.log('    a list of files to run. files must end in .js and will exit after running unless --shell is specified');
+  console.log();
+  console.log('  file names:')
+  console.log('    List of space delimited files (ending in .js) to execute.')
+  console.log('    When passed, the shell exits after execution unless --shell')
+  console.log('    is specified.');
 
   console.log();
 })
