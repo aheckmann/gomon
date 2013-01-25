@@ -39,8 +39,8 @@ $ gomon --help
 
 ```
 $ gomon mongodb://localhost:27017,hostA:27017,hostB/dev
+gomon version 0.0.3
 connecting to mongodb://localhost:27017,hostA:27017,hostB/dev
-connected
 gomon>
 ```
 
@@ -61,8 +61,8 @@ First we connect to fakehost.
 
 ```
 $ gomon --host fakehost
+gomon version 0.0.3
 connecting to mongodb://fakehost
-connected
 gomon>
 ```
 
@@ -115,6 +115,43 @@ error:  null
 { _id: 50f99acfc50ea8c8ef23142c,
   name: 'gomon was here' }
 ```
+
+### Files
+
+All arguments ending in `.js` will be treated as files and executed.
+
+```js
+// script1.js
+console.log('gomongo');
+
+// command line
+$ gomon script1.js
+gomon version 0.0.3
+connecting to mongodb://localhost:27017/test
+gomongo
+------------------------------------------
+  waiting for script to call `exit;` ...
+  OR press Ctrl+D to quit immediately
+------------------------------------------
+gomon>
+```
+
+When files are passed, the shell will not automatically exit. This is so that async operations within scripts are not stopped prematurely. Your scripts must manage themselves, e.g. when all operations are completed, call `exit;`.
+
+### Eval
+
+Code may be evaled and printed to the shell by passing the `-e` or `--eval` flag.
+
+```
+$ gomon --eval "db.databaseName + ' is the default db'"
+gomon version 0.0.3
+connecting to mongodb://localhost:27017/test
+test is the default db
+
+bye
+```
+
+The shell will immediately exit after script evaluation unless the `--shell` flag is passed.
 
 ### Debugging
 
