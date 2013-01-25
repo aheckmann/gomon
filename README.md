@@ -15,11 +15,13 @@ $ gomon --help
 
   Options:
 
-    -h, --help     output usage information
-    -V, --version  output the version number
-    --port <port>  port to connect to
-    --host <host>  server to connect to
-    --shell        run the shell after executing files
+    -h, --help        output usage information
+    -V, --version     output the version number
+    --port <port>     port to connect to
+    --host <host>     server to connect to
+    -e --eval <code>  evaluate script
+    -v --version      print gomon's version
+    --shell           run the shell after executing files
 
   db address:
     foo                     foo database on local machine
@@ -28,9 +30,9 @@ $ gomon --help
     mongodb://host:port/db  mongo URI
 
   file names:
-      List of space delimited files (ending in .js) to execute.
-      When passed, the shell exits after execution unless --shell
-      is specified.
+    List of space delimited files (ending in .js) to execute.
+    When passed, the shell exits after execution unless --shell
+    is specified.
 ```
 
 ## Example
