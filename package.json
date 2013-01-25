@@ -1,6 +1,6 @@
 {
   "name": "gomon",
-  "version": "0.0.2",
+  "version": "0.0.3-pre",
   "description": "MongoDB shell written in Node.js",
   "main": "index.js",
   "scripts": {
