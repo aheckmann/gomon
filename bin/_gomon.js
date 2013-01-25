@@ -13,11 +13,11 @@ program
   .option('--shell', 'run the shell after executing files')
   //.option('--norc', 'will not run the ".mongorc.js" file on start up')
   //.option('--quiet', 'be less chatty')
-  //.option('--eval <code>', 'evaluate javascript')
+  .option('-e --eval <code>', 'evaluate script')
+  //.option('-v --version', 'print gomon\'s version')
   //.option('-u --username <name>', 'username for authentication')
   //.option('-p --password <pwd>', 'password for authentication')
   //.option('--verbose', 'increase verbosity')
-  //.option('--ipv6', 'enable IPv6 support (disabled by default)')
 
 program.on('--help', function () {
   console.log('  db address:')
@@ -25,7 +25,6 @@ program.on('--help', function () {
   console.log('    192.169.0.5/foo         foo database on 192.168.0.5 machine')
   console.log('    192.169.0.5:9999/foo    foo database on 192.168.0.5 machine on port 9999');
   console.log('    mongodb://host:port/db  mongo URI')
-
   console.log();
   console.log('  file names:')
   console.log('    List of space delimited files (ending in .js) to execute.')
