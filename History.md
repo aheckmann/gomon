@@ -1,4 +1,14 @@
 
+0.0.2 / 2013-01-24
+==================
+
+  * added; better logging
+  * added; collection getters to default db
+  * added; `show.tables` alias for `show.collections`
+  * added; query result helper `p`
+  * added; file execution support
+  * removed; visionmedia/debug
+
 0.0.1 / 2013-01-22
 ==================
 
