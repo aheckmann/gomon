@@ -46,12 +46,22 @@ gomon>
 
 ## API
 
-- `show.dbs`: list available databases
-- `show.collections`: list available collections in current database
-- `use[databaseName]`: switch databases
-- `exit`: exits the shell
-- `show.tables`: alias of `show.collections`
-- `db.collection.findOne(p)`: find a single document and print it
+- `show.dbs`: List available databases
+- `show.collections`: List available collections in current database
+- `show.tables`: Alias of `show.collections`
+- `use[databaseName]`: Switch databases
+- `exit`: Exits the shell
+- `db.close()`: Closes the database connection
+- `db.col()`: Accesses a collection
+- `db.cols()`: Retreives an array of collection names in the db
+- `db.createCol()`: Creates a collection
+- `db.drop()`: Drops the database
+- `db.help()`: Logs help text for all db methods
+- `db.inspect()`: Returns the name of the database
+- `db.open()`: Opens the database connection
+- `db.runCommand()`: Runs a command on the database
+- `db.use()`: Changes to a different database
+- `db.collection.findOne()`: Find a single document
 
 More to come.
 
