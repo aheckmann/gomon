@@ -1,4 +1,14 @@
 
+0.0.4 / 2013-01-29
+==================
+
+  * added; db abstraction
+  * updated; driver 1.2.11
+  * db; remove created collection on refresh
+  * db; add db.help() and db.method.help()
+  * db; always force close the connection on db.close()
+  * db; refresh collections after dropping
+
 0.0.3 / 2013-01-25
 ==================
 

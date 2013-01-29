@@ -4,7 +4,7 @@
 MongoDB shell written in Node.js
 
 
-_Work in Progress_
+_Experimental_
 
 ## Usage
 
